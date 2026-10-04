@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>inkk1x — Custom Footwear</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root{
+    --black:#070707;
+    --white:#f4f2ec;
+    --gray:#777;
+    --line:rgba(255,255,255,.14);
+    --lime:#d9ff35;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--black);
+    color:var(--white);
+    font-family:"DM Sans",Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:999;
+    opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* HEADER */
+
+header{
+    height:82px;
+    padding:0 5vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:100;
+    background:rgba(7,7,7,.78);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:-2px;
+}
+
+.logo span{
+    color:var(--lime);
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+nav a{
+    transition:.25s;
+}
+
+nav a:hover{
+    color:var(--lime);
+}
+
+.nav-order{
+    border:1px solid white;
+    padding:13px 18px;
+}
+
+.nav-order:hover{
+    background:white;
+    color:black;
+}
+
+
+/* GENERAL */
+
+.small-label{
+    color:var(--gray);
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:125px 5vw 45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.hero-top{
+    display:flex;
+    justify-content:space-between;
+    color:var(--gray);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.hero-title{
+    margin-top:8vh;
+}
+
+.hero-title h1{
+    font-size:clamp(100px,20vw,300px);
+    line-height:.68;
+    letter-spacing:-10px;
+}
+
+.hero-title .outline{
+    color:transparent;
+    -webkit-text-stroke:1px white;
+    margin-left:20vw;
+}
+
+.hero-bottom{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    align-items:end;
+}
+
+.hero-description{
+    color:#888;
+    font-size:10px;
+    line-height:1.7;
+    letter-spacing:2px;
+}
+
+.circle-button{
+    width:105px;
+    height:105px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    justify-self:center;
+    font-size:9px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.circle-button strong{
+    color:var(--lime);
+    font-size:18px;
+}
+
+.circle-button:hover{
+    background:var(--lime);
+    color:black;
+    transform:rotate(8deg);
+}
+
+.circle-button:hover strong{
+    color:black;
+}
+
+.hero-year{
+    justify-self:end;
+    color:#777;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+
+/* INTRO */
+
+.intro{
+    min-height:90vh;
+    padding:150px 7vw;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:120px 1fr;
+}
+
+.intro h2,
+.manifesto h2,
+.process h2,
+.cta h2{
+    font-size:clamp(65px,9vw,145px);
+    line-height:.78;
+    letter-spacing:-5px;
+    margin-top:35px;
+}
+
+i{
+    font-family:Georgia,serif;
+    font-weight:400;
+}
+
+.intro-text{
+    max-width:480px;
+    color:#999;
+    font-size:14px;
+    line-height:1.8;
+    margin-top:55px;
+}
+
+.arrow-link{
+    display:inline-flex;
+    gap:40px;
+    border-bottom:1px solid white;
+    padding-bottom:13px;
+    margin-top:50px;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.arrow-link:hover{
+    color:var(--lime);
+    border-color:var(--lime);
+}
+
+
+/* GALLERY */
+
+.gallery{
+    padding:120px 5vw;
+    border-top:1px solid var(--line);
+}
+
+.gallery-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.gallery-heading h2{
+    font-size:clamp(55px,8vw,110px);
+    line-height:.75;
+    margin-top:25px;
+    letter-spacing:-4px;
+}
+
+.gallery-counter{
+    display:flex;
+    gap:8px;
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.gallery-counter span:first-child{
+    color:white;
+}
+
+.gallery-box{
+    height:min(75vh,850px);
+    min-height:450px;
+    position:relative;
+    overflow:hidden;
+    background:#111;
+}
+
+.gallery-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:opacity .4s,transform .8s;
+}
+
+.gallery-box.changing img{
+    opacity:.1;
+    transform:scale(1.04);
+}
+
+.gallery-gradient{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(to top,rgba(0,0,0,.8),transparent 45%),
+        linear-gradient(to right,rgba(0,0,0,.3),transparent 40%);
+}
+
+.gallery-info{
+    position:absolute;
+    left:30px;
+    bottom:25px;
+    display:flex;
+    gap:30px;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.gallery-info span:first-child{
+    color:var(--lime);
+}
+
+.gallery-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:60px;
+    height:60px;
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:50%;
+    background:rgba(0,0,0,.2);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery-arrow:hover{
+    background:var(--lime);
+    color:black;
+    border-color:var(--lime);
+}
+
+.previous{
+    left:25px;
+}
+
+.next{
+    right:25px;
+}
+
+.gallery-footer{
+    display:flex;
+    justify-content:space-between;
+    padding-top:18px;
+    color:#555;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.dots{
+    display:flex;
+    gap:7px;
+}
+
+.dot{
+    width:6px;
+    height:6px;
+    border:0;
+    border-radius:50%;
+    background:#444;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:var(--lime);
+}
+
+
+/* MANIFESTO */
+
+.manifesto{
+    min-height:100vh;
+    padding:150px 7vw;
+    border-top:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.manifesto-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-top:100px;
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.manifesto-bottom p{
+    max-width:300px;
+    line-height:1.8;
+    letter-spacing:0;
+}
+
+
+/* PROCESS */
+
+.process{
+    padding:130px 7vw;
+    border-top:1px solid var(--line);
+}
+
+.process-grid{
+    margin-top:100px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.process-grid article{
+    min-height:300px;
+    border-top:1px solid var(--line);
+    border-right:1px solid var(--line);
+    padding:25px;
+}
+
+.process-grid article:last-child{
+    border-right:0;
+}
+
+.process-grid article>span{
+    color:var(--lime);
+    font-size:10px;
+}
+
+.process-grid h3{
+    margin-top:100px;
+    font-size:15px;
+    letter-spacing:3px;
+}
+
+.process-grid p{
+    color:#777;
+    max-width:300px;
+    font-size:12px;
+    line-height:1.8;
+    margin-top:20px;
+}
+
+
+/* CTA */
+
+.cta{
+    padding:170px 7vw;
+    border-top:1px solid var(--line);
+    text-align:center;
+}
+
+.cta h2{
+    margin-bottom:70px;
+}
+
+.big-order{
+    display:inline-flex;
+    align-items:center;
+    gap:70px;
+    padding:22px 30px;
+    background:var(--lime);
+    color:black;
+    font-size:11px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.big-order:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 60px rgba(217,255,53,.15);
+}
+
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:35px 5vw;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    align-items:center;
+}
+
+.footer-logo{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:-2px;
+}
+
+footer div:nth-child(2){
+    display:flex;
+    gap:30px;
+    color:#666;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+footer a{
+    text-align:right;
+    color:#777;
+    font-size:9px;
+}
+
+footer a:hover{
+    color:var(--lime);
+}
+
+
+/* ORDER MODAL */
+
+.order-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    backdrop-filter:blur(15px);
+    z-index:500;
+    display:none;
+    overflow-y:auto;
+}
+
+.order-overlay.open{
+    display:block;
+}
+
+.order-container{
+    max-width:1000px;
+    margin:auto;
+    padding:120px 30px 80px;
+}
+
+.close-order{
+    position:fixed;
+    top:25px;
+    right:30px;
+    width:45px;
+    height:45px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    background:transparent;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.close-order:hover{
+    background:var(--lime);
+    color:black;
+}
+
+.order-title{
+    font-size:clamp(65px,10vw,140px);
+    line-height:.75;
+    letter-spacing:-6px;
+}
+
+.order-title i{
+    color:var(--lime);
+}
+
+.order-description{
+    max-width:500px;
+    color:#777;
+    font-size:13px;
+    line-height:1.8;
+    margin:50px 0 80px;
+}
+
+form{
+    border-top:1px solid var(--line);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.field{
+    border-bottom:1px solid var(--line);
+    padding:30px 0;
+}
+
+.field label{
+    display:block;
+    color:#666;
+    font-size:9px;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    background:transparent;
+    border:0;
+    outline:0;
+    color:white;
+    font-family:inherit;
+    font-size:16px;
+    resize:vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+    color:#444;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+    color:var(--lime);
+}
+
+.field select option{
+    background:#111;
+}
+
+.submit-area{
+    margin-top:45px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.submit-note{
+    max-width:400px;
+    color:#555;
+    font-size:10px;
+    line-height:1.7;
+}
+
+.submit{
+    border:0;
+    background:var(--lime);
+    color:black;
+    padding:20px 30px;
+    font-size:10px;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit:hover{
+    transform:translateY(-4px);
+}
+
+.status{
+    margin-top:25px;
+    color:var(--lime);
+    font-size:11px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        height:70px;
+        padding:0 20px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a:not(.nav-order){
+        display:none;
+    }
+
+    .hero{
+        padding:105px 20px 35px;
+    }
+
+    .hero-top{
+        font-size:7px;
+    }
+
+    .hero-title h1{
+        font-size:27vw;
+        letter-spacing:-5px;
+    }
+
+    .hero-title .outline{
+        margin-left:12vw;
+    }
+
+    .hero-bottom{
+        grid-template-columns:1fr auto;
+    }
+
+    .circle-button{
+        width:80px;
+        height:80px;
+    }
+
+    .hero-year{
+        display:none;
+    }
+
+    .intro{
+        padding:100px 20px;
+        display:block;
+    }
+
+    .intro h2,
+    .manifesto h2,
+    .process h2,
+    .cta h2{
+        font-size:16vw;
+        letter-spacing:-3px;
+    }
+
+    .gallery{
+        padding:90px 20px;
+    }
+
+    .gallery-box{
+        height:65vh;
+        min-height:400px;
+    }
+
+    .gallery-arrow{
+        width:45px;
+        height:45px;
+    }
+
+    .previous{
+        left:12px;
+    }
+
+    .next{
+        right:12px;
+    }
+
+    .manifesto{
+        min-height:80vh;
+        padding:100px 20px;
+    }
+
+    .manifesto-bottom{
+        margin-top:70px;
+        display:block;
+    }
+
+    .manifesto-bottom p{
+        margin-top:25px;
+    }
+
+    .process{
+        padding:100px 20px;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+        margin-top:60px;
+    }
+
+    .process-grid article{
+        border-right:0;
+        min-height:250px;
+    }
+
+    .process-grid h3{
+        margin-top:70px;
+    }
+
+    .cta{
+        padding:120px 20px;
+    }
+
+    .big-order{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    footer{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    footer a{
+        text-align:left;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .submit-area{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .submit{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="#" class="logo">
+        inkk<span>1</span>x
+    </a>
+
+    <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#" class="nav-order" onclick="openOrder(event)">
+            Order ↗
+        </a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-top">
+        <span>01 / CUSTOM FOOTWEAR</span>
+        <span>AGADIR — MOROCCO</span>
+    </div>
+
+    <div class="hero-title">
+        <h1>INKK</h1>
+        <h1 class="outline">1X</h1>
+    </div>
+
+    <div class="hero-bottom">
+
+        <div class="hero-description">
+            CUSTOM SHOES<br>
+            MADE TO LOOK<br>
+            NOTHING LIKE<br>
+            EVERYONE ELSE.
+        </div>
+
+        <a href="#gallery" class="circle-button">
+            <span>EXPLORE</span>
+            <strong>↓</strong>
+        </a>
+
+        <div class="hero-year">
+            EST. 2026
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro" id="about">
+
+    <div class="section-number small-label">
+        02
+    </div>
+
+    <div>
+
+        <span class="small-label">
+            THE IDEA
+        </span>
+
+        <h2>
+            NOT MADE<br>
+            TO <i>BLEND.</i>
+        </h2>
+
+        <p class="intro-text">
+            inkk1x transforms ordinary sneakers into personal
+            pieces of art. Your colors. Your references.
+            Your ideas. One pair. No copy.
+        </p>
+
+        <a href="#" class="arrow-link" onclick="openOrder(event)">
+            START YOUR PAIR ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+    <div class="gallery-heading">
+
+        <div>
+
+            <span class="small-label">
+                SELECTED WORK
+            </span>
+
+            <h2>
+                THE <i>GALLERY.</i>
+            </h2>
+
+        </div>
+
+        <div class="gallery-counter">
+            <span id="current">01</span>
+            <span>/</span>
+            <span id="total">04</span>
+        </div>
+
+    </div>
+
+
+    <div class="gallery-box" id="galleryBox">
+
+        <img
+            id="galleryImage"
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=2000&q=90"
+            alt="Sneaker"
+        >
+
+        <div class="gallery-gradient"></div>
+
+        <div class="gallery-info">
+
+            <span id="galleryName">
+                REDLINE
+            </span>
+
+            <span>
+                CUSTOM / 001
+            </span>
+
+        </div>
+
+        <button
+            class="gallery-arrow previous"
+            id="previous"
+            aria-label="Previous image">
+            ←
+        </button>
+
+        <button
+            class="gallery-arrow next"
+            id="next"
+            aria-label="Next image">
+            →
+        </button>
+
+    </div>
+
+
+    <div class="gallery-footer">
+
+        <div class="dots" id="dots"></div>
+
+        <span>
+            AUTO PLAY / 10 SEC
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- MANIFESTO -->
+
+<section class="manifesto">
+
+    <span class="small-label">
+        INKK1X STUDIO
+    </span>
+
+    <h2>
+        EVERY PAIR<br>
+        STARTS WITH<br>
+        A <i>BLANK.</i>
+    </h2>
+
+    <div class="manifesto-bottom">
+
+        <span>
+            03 / 03
+        </span>
+
+        <p>
+            We don't just customize shoes.
+            We turn your idea into something
+            you can actually wear.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process">
+
+    <span class="small-label">
+        THE PROCESS
+    </span>
+
+    <h2>
+        FROM IDEA<br>
+        TO <i>ICON.</i>
+    </h2>
+
+
+    <div class="process-grid">
+
+        <article>
+
+            <span>01</span>
+
+            <h3>DESCRIBE</h3>
+
+            <p>
+                Tell us the shoe, colors, artwork,
+                characters, references and ideas
+                you have in mind.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>02</span>
+
+            <h3>CREATE</h3>
+
+            <p>
+                Your concept becomes a custom
+                design built around your vision.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>03</span>
+
+            <h3>WEAR</h3>
+
+            <p>
+                Your finished pair becomes
+                something completely yours.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <span class="small-label">
+        READY?
+    </span>
+
+    <h2>
+        MAKE<br>
+        YOUR <i>PAIR.</i>
+    </h2>
+
+    <a href="#" class="big-order" onclick="openOrder(event)">
+        ORDER NOW ↗
+    </a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        inkk1x
+    </div>
+
+    <div>
+        <span>CUSTOM FOOTWEAR</span>
+        <span>2026</span>
+    </div>
+
+    <a href="mailto:saadzahir052001@gmail.com">
+        saadzahir052001@gmail.com
+    </a>
+
+</footer>
+
+
+<!-- ORDER WINDOW -->
+
+<div class="order-overlay" id="orderOverlay">
+
+    <button class="close-order" onclick="closeOrder()">
+        ×
+    </button>
+
+    <div class="order-container">
+
+        <span class="small-label">
+            CUSTOM REQUEST / 001
+        </span>
+
+        <h1 class="order-title">
+            MAKE<br>
+            YOUR <i>PAIR.</i>
+        </h1>
+
+        <p class="order-description">
+            Tell us exactly what you want. Fill in the form
+            and your email application will open with your
+            request already prepared for the inkk1x team.
+        </p>
+
+
+        <form id="orderForm">
+
+            <div class="form-row">
+
+                <div class="field">
+
+                    <label>
+                        01 / NAME *
+                    </label>
+
+                    <input
+                        name="name"
+                        type="text"
+                        placeholder="Your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        02 / EMAIL *
+                    </label>
+
+                    <input
+                        name="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="field">
+
+                    <label>
+                        03 / SHOE SIZE *
+                    </label>
+
+                    <select name="size" required>
+
+                        <option value="">
+                            Select size
+                        </option>
+
+                        <option>35</option>
+                        <option>36</option>
+                        <option>37</option>
+                        <option>38</option>
+                        <option>39</option>
+                        <option>40</option>
+                        <option>41</option>
+                        <option>42</option>
+                        <option>43</option>
+                        <option>44</option>
+                        <option>45</option>
+                        <option>46</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        04 / SHOE MODEL *
+                    </label>
+
+                    <input
+                        name="model"
+                        type="text"
+                        placeholder="Air Force 1, Dunk, Converse..."
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    05 / CUSTOMIZATION *
+                </label>
+
+                <textarea
+                    name="customization"
+                    rows="7"
+                    placeholder="Colors, artwork, characters, text, symbols, placement..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    06 / ADDITIONAL NOTES
+                </label>
+
+                <textarea
+                    name="notes"
+                    rows="5"
+                    placeholder="Anything else?"
+                ></textarea>
+
+            </div>
+
+
+            <div class="submit-area">
+
+                <p class="submit-note">
+                    Your email application will open with
+                    the order information already filled in.
+                </p>
+
+                <button
+                    class="submit"
+                    type="submit">
+                    PREPARE ORDER EMAIL →
+                </button>
+
+            </div>
+
+            <div
+                class="status"
+                id="status">
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   GALLERY
+========================= */
+
+const slides = [
+
+    {
+        image:
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=2000&q=90",
+
+        name:"REDLINE"
+    },
+
+    {
+        image:
+        "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=2000&q=90",
+
+        name:"MONO"
+    },
+
+    {
+        image:
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=2000&q=90",
+
+        name:"SHADOW"
+    },
+
+    {
+        image:
+        "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=2000&q=90",
+
+        name:"FORM"
+    }
+
+];
+
+const galleryImage =
+document.getElementById("galleryImage");
+
+const galleryName =
+document.getElementById("galleryName");
+
+const galleryBox =
+document.getElementById("galleryBox");
+
+const current =
+document.getElementById("current");
+
+const total =
+document.getElementById("total");
+
+const dots =
+document.getElementById("dots");
+
+let index = 0;
+
+let timer;
+
+
+total.textContent =
+String(slides.length).padStart(2,"0");
+
+
+function createDots(){
+
+    dots.innerHTML = "";
+
+    slides.forEach((slide,i)=>{
+
+        const dot =
+        document.createElement("button");
+
+        dot.className =
+        "dot";
+
+        if(i === index){
+            dot.classList.add("active");
+        }
+
+        dot.addEventListener("click",()=>{
+
+            showSlide(i);
+
+            resetTimer();
+
+        });
+
+        dots.appendChild(dot);
+
+    });
+
+}
+
+
+function showSlide(newIndex){
+
+    index =
+    (newIndex + slides.length)
+    % slides.length;
+
+    galleryBox.classList.add("changing");
+
+    setTimeout(()=>{
+
+        galleryImage.src =
+        slides[index].image;
+
+        galleryName.textContent =
+        slides[index].name;
+
+        current.textContent =
+        String(index + 1).padStart(2,"0");
+
+        createDots();
+
+        galleryBox.classList.remove("changing");
+
+    },180);
+
+}
+
+
+function resetTimer(){
+
+    clearInterval(timer);
+
+    timer =
+    setInterval(()=>{
+
+        showSlide(index + 1);
+
+    },10000);
+
+}
+
+
+document
+.getElementById("previous")
+.addEventListener("click",()=>{
+
+    showSlide(index - 1);
+
+    resetTimer();
+
+});
+
+
+document
+.getElementById("next")
+.addEventListener("click",()=>{
+
+    showSlide(index + 1);
+
+    resetTimer();
+
+});
+
+
+let touchStart = 0;
+
+
+galleryBox.addEventListener(
+    "touchstart",
+    event => {
+
+        touchStart =
+        event.touches[0].clientX;
+
+    },
+    {passive:true}
+);
+
+
+galleryBox.addEventListener(
+    "touchend",
+    event => {
+
+        const touchEnd =
+        event.changedTouches[0].clientX;
+
+        const difference =
+        touchStart - touchEnd;
+
+        if(Math.abs(difference) > 50){
+
+            if(difference > 0){
+
+                showSlide(index + 1);
+
+            }else{
+
+                showSlide(index - 1);
+
+            }
+
+            resetTimer();
+
+        }
+
+    },
+    {passive:true}
+);
+
+
+createDots();
+
+resetTimer();
+
+
+
+/* =========================
+   ORDER WINDOW
+========================= */
+
+const orderOverlay =
+document.getElementById("orderOverlay");
+
+
+function openOrder(event){
+
+    if(event){
+        event.preventDefault();
+    }
+
+    orderOverlay.classList.add("open");
+
+    document.body.style.overflow =
+    "hidden";
+
+}
+
+
+function closeOrder(){
+
+    orderOverlay.classList.remove("open");
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(event.key === "Escape"){
+
+            closeOrder();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ORDER EMAIL
+========================= */
+
+document
+.getElementById("orderForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const data =
+    new FormData(this);
+
+    const name =
+    data.get("name");
+
+    const email =
+    data.get("email");
+
+    const size =
+    data.get("size");
+
+    const model =
+    data.get("model");
+
+    const customization =
+    data.get("customization");
+
+    const notes =
+    data.get("notes");
+
+
+    const subject =
+    `inkk1x Custom Order — ${name}`;
+
+
+    const body =
+`Hello inkk1x,
+
+I'd like to request a custom pair.
+
+NAME:
+${name}
+
+EMAIL:
+${email}
+
+SHOE SIZE:
+${size}
+
+SHOE MODEL:
+${model}
+
+CUSTOMIZATION:
+${customization}
+
+ADDITIONAL NOTES:
+${notes || "None"}
+
+Thanks!`;
+
+
+    const mailto =
+    "mailto:saadzahir052001@gmail.com" +
+    "?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body);
+
+
+    document.getElementById("status")
+    .textContent =
+    "Opening your email application...";
+
+
+    window.location.href =
+    mailto;
+
+});
+
+</script>
+
+</body>
+</html>
